@@ -1,7 +1,7 @@
 // var chai = require('chai'),
 //  expect = chai.expect;
 
-var expect = require('chai').expect;
+//var expect = require('chai').expect;
 
 // I can list my tasks...
 /*var taskList = ["Rember the milk", "Take out the trash",
@@ -49,7 +49,7 @@ function priorityTaskToList(task, list){
 }
 */
 
-expect(taskList.length).to.equal(0);
+/*expect(taskList.length).to.equal(0);
 addTaskToList("Remember the milk", taskList);
 expect(taskList[0].text).to.equal("Remember the milk");
 expect(taskList.length).to.equal(1);
@@ -73,7 +73,7 @@ expect(taskList.length).to.equal(4);
 expect(taskList.length).to.equal(4);
 addTaskToList("Get the mail", taskList);
 expect(taskList[4].text).to.equal("Get the mail");
-expect(taskList.length).to.equal(5);
+expect(taskList.length).to.equal(5);*/
 
 // expect(taskList[1]).to.not.be.completed?
 // console.log(taskList);
