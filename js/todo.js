@@ -13,9 +13,9 @@ function listTasks(taskList) {
   return taskList;
 }
 
-/*console.log(taskList);
+console.log(taskList);
 
-var newList = taskList.push("Feed the dog", "Get the mail");
+/*var newList = taskList.push("Feed the dog", "Get the mail");
 
 console.log(taskList);
 
