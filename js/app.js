@@ -1,6 +1,36 @@
 (function (window) {
 	'use strict';
 
+	function Controller(model, view) {
+		var that = this;
+		that.model = model;
+		that.view = view;
+
+		that.view.bind('newTodo', function (title) {
+
+		});
+	}
+
+	Controller.prototype.showAll = function () {
+		var that = this;
+		that.model.read(function (data) {
+			that.view.render('showEntries', data);
+		});
+	};
+
+	Controller.prototype.addItem = function (title) {
+		var that = this;
+
+		if (title.trim() === "") {
+			return;
+		}
+
+		that.model.create(title, function () {
+			that.view.render('clearNewTodo');
+			that._filter(true);
+		});
+	};
+
 	// Your starting point. Enjoy the ride!
 	document.head.parentElement.className = "js";
 
@@ -19,7 +49,7 @@
 	    element.addEventListener('view', function(){
 	        element.parentElement.classList.toggle('todo-list');
 	    });
-	});
+	});*/
 
 })(window);
 
