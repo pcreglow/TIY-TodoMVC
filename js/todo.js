@@ -6,6 +6,9 @@
 // I can list my tasks...
 /*var taskList = ["Rember the milk", "Take out the trash",
                 "Clean the bathroom"]; */
+(function(window){
+
+
 var taskList = [ ];
 
 // I can list my tasks...
@@ -13,9 +16,9 @@ function listTasks(taskList) {
   return taskList;
 }
 
-/*console.log(taskList);
+console.log(taskList);
 
-var newList = taskList.push("Feed the dog", "Get the mail");
+/*var newList = taskList.push("Feed the dog", "Get the mail");
 
 console.log(taskList);
 
@@ -37,6 +40,13 @@ function addTaskToList(task, list){
     });
 }
 
+  window.todos = {
+    "addTaskToList": addTaskToList,
+    "completeTask"; completeTask,
+    "deleteTask"; deleteTask
+  };
+
+})(window);
 /*function removeTaskToList(task, list){
 
 
