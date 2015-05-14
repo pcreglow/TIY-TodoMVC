@@ -6,20 +6,22 @@
 //2. What element makes sense to listen for that event? input.new-todo
 //3. What do I need to do when that event fires? See below TO ADD A NEW TASK
 
-// Given an HTML element <input class ='new-todo'>
+	// Given an HTML element <input class ='new-todo'>
 	var newTodoInput = document.querySelector('input.new-todo')
 
 	// WHEN the user types a task
 	newTodoInput.addEventListener('keyup', function addTodoController(event){
 			if (event.keyCode === 13){ // AND presses the "Enter" key
 				var task = document.querySelector('input.new-todo').value;
+	// SAVE the thing to remember (task) to the list of things to remember (taskList)
 				todos.taskList.push(task);
+	// Remove the thing to remember from the "What needs tp be done?" box (input.new-todo)
+				document.querySelector('input.new-todo').value= "";
 				console.log(todos.taskList);
 
 
 			// THEN:
-			// 4.TODO Save the thing to remember (task) to the list of things to remember (taskList)
-			// 5.TODO Remove the thing to remember from the "What needs tp be done?" box (input.new-todo)
+			// Remove the thing to remember from the "What needs tp be done?" box (input.new-todo)
 			// 6.TODO Update the number of tasks in the footer
 			// 7.TODO Add a new task (ul.todo-list > li)to the list of tasks _in the display_ (ul.todo-list)
 
