@@ -6,6 +6,9 @@
 // I can list my tasks...
 /*var taskList = ["Rember the milk", "Take out the trash",
                 "Clean the bathroom"]; */
+(function(window){
+
+
 var taskList = [ ];
 
 // I can list my tasks...
@@ -37,6 +40,13 @@ function addTaskToList(task, list){
     });
 }
 
+  window.todos = {
+    "addTaskToList": addTaskToList,
+    "completeTask"; completeTask,
+    "deleteTask"; deleteTask
+  };
+
+})(window);
 /*function removeTaskToList(task, list){
 
 

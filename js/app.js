@@ -1,37 +1,34 @@
-(function (window) {
+(function (window) { //IIFE: Immediately Invoked Function Expression
 	'use strict';
 
-	function Controller(model, view) {
-		var that = this;
-		that.model = model;
-		that.view = view;
+// CONTROLLER: I can add a task to my list...t
+//I. What event should I be listening for? keydown, keyup, keypress
+//2. What element makes sense to listen for that event? input.new-todo
+//3. What do I need to do when that event fires? See below TO ADD A NEW TASK
 
-		that.view.bind('newTodo', function (title) {
+// Given an HTML element <input class ='new-todo'>
+	var newTodoInput = document.querySelector('input.new-todo')
 
-		});
-	}
+	// WHEN the user types a task
+	newTodoInput.addEventListener('keyup', function addTodoController(event){
+			if (event.keyCode === 13){ // AND presses the "Enter" key
+				console.log('Sanity check!');
 
-	Controller.prototype.showAll = function () {
-		var that = this;
-		that.model.read(function (data) {
-			that.view.render('showEntries', data);
-		});
-	};
 
-	Controller.prototype.addItem = function (title) {
-		var that = this;
+			// THEN:
+			// 4.ROBOT: Save the thing to remember (task) to the list of things to remember (taskList)
+			// 5.ROBOT: Remove the thing to remember from the "What needs tp be done?" box (input.new-todo)
+			// 6.ROBOT: Update the number of tasks in the footer
+			// 7.ROBOT: Add a new task (ul.todo-list > li)to the list of tasks _in the display_ (ul.todo-list)
 
-		if (title.trim() === "") {
-			return;
+
 		}
 
-		that.model.create(title, function () {
-			that.view.render('clearNewTodo');
-			that._filter(true);
 		});
-	};
+})(window);
 
-	// Your starting point. Enjoy the ride!
+
+	/* Your starting point. Enjoy the ride!
 	document.head.parentElement.className = "js";
 
 	var elements = document.querySelectorAll('ul');
@@ -51,7 +48,9 @@
 	    });
 	});*/
 
-})(window);
+
+
+
 
 /*elements[0].addEventListener('click', function(){
 	elements[0].parentElement.classList.toggle('cbp-ntopen');
