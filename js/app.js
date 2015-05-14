@@ -7,12 +7,14 @@
 //3. What do I need to do when that event fires? See below TO ADD A NEW TASK
 
 // Given an HTML element <input class ='new-todo'>
-	var newTodoInput = document.querySelector('input.new-todo');
+	var newTodoInput = document.querySelector('input.new-todo')
 
 	// WHEN the user types a task
 	newTodoInput.addEventListener('keyup', function addTodoController(event){
 			if (event.keyCode === 13){ // AND presses the "Enter" key
-				console.log('Sanity check!');
+				var task = document.querySelector('input.new-todo').value;
+				//todos.taskList.push(task)
+				console.log(task);
 
 
 			// THEN:
