@@ -36,8 +36,8 @@
   window.todos = {
     "taskList": taskList,
     "addTaskToList": addTaskToList,
-    "completeTask"; completeTask,
-    "deleteTask"; deleteTask
+    "completeTask": completeTask,
+    "deleteTask": deleteTask
   };
 
 })(window);

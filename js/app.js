@@ -13,8 +13,8 @@
 	newTodoInput.addEventListener('keyup', function addTodoController(event){
 			if (event.keyCode === 13){ // AND presses the "Enter" key
 				var task = document.querySelector('input.new-todo').value;
-				//todos.taskList.push(task)
-				console.log(task);
+				todos.taskList.push(task);
+				console.log(todos.taskList);
 
 
 			// THEN:
@@ -24,9 +24,10 @@
 			// 7.TODO Add a new task (ul.todo-list > li)to the list of tasks _in the display_ (ul.todo-list)
 
 
-		}
+			}
 
 		});
+
 })(window);
 
 
