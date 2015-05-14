@@ -11,12 +11,18 @@
 
 	// WHEN the user types a task
 	newTodoInput.addEventListener('keyup', function addTodoController(event){
+
 			if (event.keyCode === 13){ // AND presses the "Enter" key
 	// SAVE the thing to remember (task) to the list of things to remember (taskList)
 				var task = document.querySelector('input.new-todo').value;
 				todos.taskList.push(task);
 	// Remove the thing to remember from the "What needs tp be done?" box (input.new-todo)
-				document.querySelector('input.new-todo').value= "";
+
+
+
+				document.querySelector('input.new-todo').value = "";
+
+
 	// Update the number of tasks in the footer
 				if (todos.taskList.length === 1) {
 
@@ -27,6 +33,11 @@
 					(document.querySelector('span.todo-count').textContent = (todos.taskList.length + ' Items Left'));
 
 				};
+
+				//document.querySeletor('ul.todo-list').textContent = todos.taskList
+
+				document.querySelector('ul.todo-list > li').textContent = todos.taskList;
+
 				console.log(todos.taskList);
 				console.log(todos.taskList.length);
 
