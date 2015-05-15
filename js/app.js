@@ -7,14 +7,14 @@
 	//3. What do I need to do when that event fires? See below TO ADD A NEW TASK
 
 	// Given an HTML element <input class ='new-todo'>
-		var newTodoInput = document.querySelector('input.new-todo')
+			var newTodoInput = document.querySelector('input.new-todo')
 
 	// WHEN the user types a task
-		newTodoInput.addEventListener('keyup', function addTodoController(event){
+			newTodoInput.addEventListener('keyup', function addTodoController(event){
 
 			if (event.keyCode === 13){ // AND presses the "Enter" key
 	// SAVE the thing to remember (task) to the list of things to remember (taskList)
-		var task = document.querySelector('input.new-todo').value;
+			var task = document.querySelector('input.new-todo').value;
 			todos.taskList.push(task);
 	// REMOVE the thing to remember from the "What needs tp be done?" box (input.new-todo)
 
@@ -52,27 +52,27 @@
 		});
 
 
-		var deleteTask = document.querySelectorAll('ul.todo-list')
+		//var deleteTask = document.querySelectorAll('ul.todo-list')
 		var deleteTaskButtons = document.querySelectorAll('button.destroy')
 		var editTask = document.querySelectorAll('li');
 
-		_.forEach(deleteTask, function(element, index, deleteTask){
-			element.addEventListener('mouseover', function(){
-				console.log('hello')
-			})
-		})
+		//_.forEach(deleteTask, function(element, index, deleteTask){
+			//element.addEventListener('mouseover', function(){
+				//console.log('hello');
+			//});
+		//});
 
 		_.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons){
 			element.addEventListener('click', function(){
 				console.log('goodbye');
-			})
-		})
+			});
+		});
 
 		_.forEach(editTask, function(element, index, editTask){
 			element.addEventListener('dblclick', function(){
 				console.log('edit me');
-			})
-		})
+			});
+		});
 
 })(window);
 
@@ -83,9 +83,13 @@
     // 3. What do I need to do when that event fires?
 
 		// CONTROLLER FOR: I can delete a task from my list...
-		// 1. What event should I be listening for?    Mouseover, Click
-		// 2. What element makes sense to listen for that event? (ul.todo-list)
+		// 1. What event should I be listening for?  Click on the X
+		// 2. What element makes sense to listen for that event? ('li')
 		// 3. What do I need to do when that event fires?
+		// Delete Task from Where it is saved
+		// Needs to delete the field/li that the todo-list lives on
+		// Update number of tasks in footer or deleting footer if number of tasks is 0
+
 
     // CONTROLLER FOR: I can complete a task on my list...
     // 1. What event should I be listening for? (double click, keyup [Enter, tab, esc])
