@@ -56,16 +56,31 @@
     // 2. What element makes sense to listen for that event? (ul.todo-list)
     // 3. What do I need to do when that event fires?
 
-		var deleteTask = document.querySelector('ul.todo-list')
+		
 
-		deleteTask.addEventListener('mouseover', function () {
+		var deleteTask = document.querySelectorAll('ul.todo-list')
+		var deleteTaskButtons = document.querySelectorAll('button.destroy')
+		var editTask = document.querySelectorAll('li');
 
-			console.log('hello')
-		});
+		_.forEach(deleteTask, function(element, index, deleteTask){
+			element.addEventListener('mouseover', function(){
+				console.log('hello')
+			})
+		})
+
+		_.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons){
+			element.addEventListener('click', function(){
+				console.log('goodbye');
+			})
+		})
+
+		_.forEach(editTask, function(element, index, editTask){
+			element.addEventListener('dblclick', function(){
+				console.log('edit me');
+			})
+		})
 
 })(window);
-
-
 
 
     // CONTROLLER FOR: I can edit a task on my list...
@@ -74,9 +89,10 @@
     // 3. What do I need to do when that event fires?
 
 
+
     // CONTROLLER FOR: I can complete a task on my list...
-    // 1. What event should I be listening for?
-    // 2. What element makes sense to listen for that event?
+    // 1. What event should I be listening for? (double click, keyup [Enter, tab, esc])
+    // 2. What element makes sense to listen for that event? ('ul.todo-list')
     // 3. What do I need to do when that event fires?
 
     // CONTROLLER FOR: I can view the list...
