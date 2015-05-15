@@ -12,31 +12,29 @@
 	// WHEN the user types a task
 			newTodoInput.addEventListener('keyup', function addTodoController(event){
 
-			if (event.keyCode === 13){ // AND presses the "Enter" key
+				if (event.keyCode !== 13) return; // AND presses the "Enter" key
 	// SAVE the thing to remember (task) to the list of things to remember (taskList)
-			var task = document.querySelector('input.new-todo').value;
-			todos.taskList.push(task);
+					var task = newTodoInput.value,
+							todoCount = document.querySelector('span.todo-count');
+					todos.addTaskToList(task,todos.taskList);
 	// REMOVE the thing to remember from the "What needs tp be done?" box (input.new-todo)
 
-
-
-			document.querySelector('input.new-todo').value = "";
+					newTodoInput.value = "";
 
 
 	// UPDATE the number of tasks in the footer
-				if (todos.taskList.length === 1) {
-
-					(document.querySelector('span.todo-count').textContent = (todos.taskList.length + ' Item Left'));
-
-				} else {
-
-					(document.querySelector('span.todo-count').textContent = (todos.taskList.length + ' Items Left'));
-
+				{
+					var todoCountText = todos.taskList.length + ' Item';
+					if (todos.taskList.length === 1) {
+						todoCountText +=  ' Left';
+					} else {
+						todoCountText += 's Left';
+					};
 				};
 
-				//document.querySeletor('ul.todo-list').textContent = todos.taskList
+				//todoCountElement.text = todoCountText;
 
-				document.querySelector('ul.todo-list > li').textContent = todos.taskList;
+				document.querySelector('ul.todo-list').innerHTML += ("<li> Hello Clarise:" + task + "</li>")
 
 				console.log(todos.taskList);
 				console.log(todos.taskList.length);
@@ -45,9 +43,6 @@
 			// THEN:
 
 			// ADD a new task (ul.todo-list > li)to the list of tasks _in the display_ (ul.todo-list)
-
-
-				}
 
 		});
 
