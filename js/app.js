@@ -8,30 +8,23 @@
 
   // Given an HTML element <input class ='new-todo'>
   var newTodoInput = document.querySelector('input.new-todo')
-	var todoCount = document.querySelector('span.todo-count')
-  // WHEN the user types a task
+  var todoCountElement = document.querySelector('span.todo-count')
+    // WHEN the user types a task
   newTodoInput.addEventListener('keyup', function addTodoController(event) {
 
     if (event.keyCode !== 13) return; // AND presses the "Enter" key
     // SAVE the thing to remember (task) to the list of things to remember (taskList)
     var task = newTodoInput.value; //,
-     	//todoCount = document.querySelector('span.todo-count');
+    //todoCount = document.querySelector('span.todo-count');
     todos.addTaskToList(task, todos.taskList);
     // REMOVE the thing to remember from the "What needs tp be done?" box (input.new-todo)
 
     newTodoInput.value = "";
 
-    // UPDATE the number of tasks in the footer
-    {
-      var todoCountText = todos.taskList.length + ' Item';
-      if (todos.taskList.length === 1) {
-        todoCountText += ' Left';
-      } else {
-        todoCountText += 's Left';
-      };
-    };
+    todos.footerCount(todoCountElement);
 
-    	//todoCountElement.text = todoCountText;
+    todoCountElement.text = todoCountElement;
+
 
     document.querySelector('ul.todo-list').innerHTML += ("<li><div><input class='toggle' type='checkbox'><label>" + task + "<button class='destroy'>")
 
