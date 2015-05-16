@@ -12,14 +12,12 @@
     // WHEN the user types a task
   newTodoInput.addEventListener('keyup', function addTodoController(event) {
 
-    if (event.keyCode !== 13) return; // AND presses the "Enter" key
+    if (event.keyCode !== 13 || newTodoInput.value == "") return; // AND presses the "Enter" key
     // SAVE the thing to remember (task) to the list of things to remember (taskList)
     var task = newTodoInput.value; //,
     //todoCount = document.querySelector('span.todo-count');
     todos.addTaskToList(task, todos.taskList);
     // REMOVE the thing to remember from the "What needs tp be done?" box (input.new-todo)
-
-    newTodoInput.value = "";
 
     todos.footerCount(todoCountElement);
 
