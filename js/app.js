@@ -19,6 +19,8 @@
     todos.addTaskToList(task, todos.taskList);
     // REMOVE the thing to remember from the "What needs tp be done?" box (input.new-todo)
 
+		newTodoInput.value = "";
+
     todos.footerCount(todoCountElement);
 
     todoCountElement.text = todoCountElement;
