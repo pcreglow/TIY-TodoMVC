@@ -6,6 +6,8 @@
   //2. What element makes sense to listen for that event? input.new-todo
   //3. What do I need to do when that event fires? See below TO ADD A NEW TASK
 
+  // Add task code refactored during class demo and during Saturday group session.
+
   // Given an HTML element <input class ='new-todo'>
   var newTodoInput = document.querySelector('input.new-todo')
   var todoCountElement = document.querySelector('span.todo-count')
@@ -38,10 +40,24 @@
 
   });
 
-
+  // CONTROLLER FOR: I can delete a task from my list...
+  // 1. What event should I be listening for?  Click on the X
+  // 2. What element makes sense to listen for that event? ('li')
+  // 3. What do I need to do when that event fires?
+  // Delete Task from Where it is saved
+  // Needs to delete the field/li that the todo-list lives on
+  // Update number of tasks in footer or deleting footer if number of tasks is 0
   //var deleteTask = document.querySelectorAll('ul.todo-list')
   var deleteTaskButtons = document.querySelectorAll('button.destroy')
-  var editTask = document.querySelectorAll('li');
+
+  /*deleteTaskButtons.addEventListener('click', function(event) {
+
+    todos.deleteTask(task, todos.taskList);
+
+    document.querySelector('li.todo-list').innetHTML +=()
+  });
+
+  var editTask = document.querySelectorAll('li');*/
 
   //_.forEach(deleteTask, function(element, index, deleteTask){
   //element.addEventListener('mouseover', function(){
@@ -68,15 +84,6 @@
 // 1. What event should I be listening for?
 // 2. What element makes sense to listen for that event?
 // 3. What do I need to do when that event fires?
-
-// CONTROLLER FOR: I can delete a task from my list...
-// 1. What event should I be listening for?  Click on the X
-// 2. What element makes sense to listen for that event? ('li')
-// 3. What do I need to do when that event fires?
-// Delete Task from Where it is saved
-// Needs to delete the field/li that the todo-list lives on
-// Update number of tasks in footer or deleting footer if number of tasks is 0
-
 
 // CONTROLLER FOR: I can complete a task on my list...
 // 1. What event should I be listening for? (double click, keyup [Enter, tab, esc])
