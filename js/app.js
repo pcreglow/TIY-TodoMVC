@@ -59,8 +59,9 @@
 
   var editTask = document.querySelectorAll('li');*/
 
-  //_.forEach(deleteTask, function(element, index, deleteTask){
-  //element.addEventListener('mouseover', function(){
+  //_.forEach(list, function(element){
+  //element.addEventListener('click', function(event){
+  //if (event.target.tagName === "BUTTON" && event.target.className === "destroy")
   //console.log('hello');
   //});
   //});
