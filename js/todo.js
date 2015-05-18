@@ -6,47 +6,52 @@
 // I can list my tasks...
 /*var taskList = ["Rember the milk", "Take out the trash",
                 "Clean the bathroom"]; */
-(function(window){
+(function(window) {
+  var taskList = [];
 
+  // I can list my tasks...
+  function listTasks(list) {
+    // TODO: make this do something
+  }
 
-var taskList = [ ];
+  // I can add a task to my list
+  function addTaskToList(task, list) {
+    // what is the task? @param task
+    // where is the task going? @param list
+    // what order / priority? on the bottom
+    return list.push(task);
+    //text: task, completed: false
+  }
 
-// I can list my tasks...
-function listTasks(taskList) {
-  return taskList;
-}
+  // I can check a task off my list..
+  function completeTask(task, list) {
+    return list[task - 1] += ' COMPLETE';
+  }
 
-console.log(taskList);
+  //I can delete a task off my list...
+  function deleteTask(task, list) {
+    return list.splice(task - 1, 1);
+  }
 
-/*var newList = taskList.push("Feed the dog", "Get the mail");
-
-console.log(taskList);
-
-var removeTask = taskList.pop();
-
-console.log(taskList);
-*/
-
-
-
-
-// I can add a task to my list
-function addTaskToList(task, list){
-  // what is the task? @param task
-  // where is the task going? @param list
-  // what order / priority? on the bottom
-    return list.push({
-      text: task, completed: false
-    });
-}
+  function footerCount(element) {
+    if (taskList.length === 1) {
+      element.textContent = taskList.length + " Item Left";
+    } else {
+      element.textContent = taskList.length + " Items Left";
+    }
+  }
 
   window.todos = {
+    "taskList": taskList,
     "addTaskToList": addTaskToList,
-    "completeTask"; completeTask,
-    "deleteTask"; deleteTask
+    "completeTask": completeTask,
+    "deleteTask": deleteTask,
+    "footerCount": footerCount
   };
 
 })(window);
+
+
 /*function removeTaskToList(task, list){
 
 
@@ -88,7 +93,14 @@ expect(taskList.length).to.equal(5);*/
 // expect(taskList[1]).to.not.be.completed?
 // console.log(taskList);
 
+/*var newList = taskList.push("Feed the dog", "Get the mail");
 
+console.log(taskList);
+
+var removeTask = taskList.pop();
+
+console.log(taskList);
+*/
 
 /*taskList.prototype.move = function (old_list, new_list) {
     while (old_list < 0) {
